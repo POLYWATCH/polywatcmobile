@@ -1,0 +1,81 @@
+
+
+.profileImage:hover {
+    cursor: pointer;
+    opacity: 0.8;
+  }
+  
+  .homeLink {
+    font-size: 24px;
+    font-weight: 500;
+  }
+  
+  .buttonLink:hover {
+    box-shadow: 0 0 0 2px rgba(255, 255, 255, 0.5);
+  }
+  
+  /* Sreens less than 720px */
+  @media (max-width: 500px) {
+    .navConnect {
+      display: none !important;
+    }
+  }
+  
+  
+  
+  
+  
+  .profile-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 999;
+  }
+  
+  .profile-container {
+    background-color: #000;
+    color: #fefefe;
+    border-radius: 8px;
+    padding: 20px;
+    width: 400px;
+    max-width: 90%;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  }
+  
+  
+  .profile-close {
+    position: absolute;
+    top: 10px;
+    right: 20px; /* Modifica questo valore per spostare l'elemento a destra */
+    color: #000;
+    cursor: pointer;
+  }
+  
+  
+  .profile-info {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    margin-top: 20px;
+  }
+  
+  .info-card {
+    background-color: #fff;
+    border-radius: 4px;
+    padding: 10px;
+    border: 2px solid #ff00ff;
+  }
+  
+  .card-header {
+    font-weight: bold;
+  }
+  
+  .card-content {
+    margin-top: 5px;
+  }
