@@ -83,15 +83,6 @@ const Stake: NextPage = () => {
   
   getQuantityOwned();
   
-  
-  
-  
-  
-  
-  
-  
-  
-  
   useEffect(() => {
     if (!contract || !address) return;
   
@@ -117,15 +108,6 @@ const Stake: NextPage = () => {
   
     loadClaimableRewards();
   }, [address, contract]);
-
-
-
-
-
-
-
-
-
     
   async function stakeNft(id: string, quantity: number) {
     if (!address || !contract) return;
@@ -139,16 +121,9 @@ const Stake: NextPage = () => {
     }
     await contract?.call("stake", [id, quantity]);
   }
-  
-
-
-  
-
   const handleStakeQuantityChange = (event: any) => {
     setStakeQuantity(event.target.value);
   };
-  
-
   const handleStakeButtonClick = () => {
     setIsStakeClicked(true);
 
@@ -163,8 +138,6 @@ const Stake: NextPage = () => {
       }, 3000);
     }, 2000);
   };
-  
-
   
   const abi={
     type:"function",
@@ -186,14 +159,6 @@ const Stake: NextPage = () => {
     });
   }
 
-
-  
-
-
-  
-  
-
-
   return (
     <div className={styles.container}>
        <div style={{ height: "150px" }}></div>
@@ -204,7 +169,7 @@ const Stake: NextPage = () => {
       <hr className={`${styles.divider} ${styles.spacerTop}`} />
 
       {!address ? (
-        <ConnectWallet />
+        <ConnectWallet style={{ marginLeft: "-180px" }} />
       ) : (
         <>
           <h2 className={styles.tokenLabel} style={{ fontFamily: 'VT323, monospace' }}>YOUR TIME TOKENS</h2>
@@ -227,21 +192,15 @@ const Stake: NextPage = () => {
             </div>
             <div className={styles.tokenItem}>
             <h3 className={styles.tokenLabel} style={{ fontFamily: 'VT323, monospace' }}>Current Balance</h3>
-
-
             <p className={styles.tokenValue}>
               <b>{tokenBalance?.displayValue}</b> {tokenBalance?.symbol}
               {tokenBalance && (
         <div className={styles.tokenImage}>
           
-
         </div> 
 
       )} 
-
-
-
-              </p>
+            </p>
              </div>
             <div style={{ marginBottom: "90px", marginLeft: "9120px" }}></div>
 
@@ -264,23 +223,13 @@ const Stake: NextPage = () => {
 >
   Claim Rewards
 </Web3Button>
-
-
-
-          </div>
-
-          
+          </div>          
           <div style={{ height: "150px" }}></div>
-
-          
 
           <hr className={`${styles.divider} ${styles.spacerTop}`} />
           <h2 className={styles.tokenLabel} style={{ fontFamily: 'VT323, monospace' }}>YOUR STAKED POLYWATCH</h2>
-
           <hr className={styles["white-line"]} />
           
-
-
           <div className={styles.nftBoxGrid}>
           {stakedTokens &&
   stakedTokens[0]?.map((stakedToken: BigNumber, index: number) => (
@@ -296,9 +245,6 @@ const Stake: NextPage = () => {
   ))}
 
 </div>
-
-
-
 <Navbar/>
 
 <hr className={`${styles.divider} ${styles.spacerTop}`} />
@@ -315,10 +261,6 @@ const Stake: NextPage = () => {
       <h3>{nft.metadata.name}</h3>
       <div className={styles.quantityInput}>
       
-     
-      
-     
-
       <label htmlFor="stakeInput" className={styles.selectLabel1}>
     SELECT QUANTITY TO STAKE
   </label>
@@ -352,15 +294,7 @@ const Stake: NextPage = () => {
 >
   Stake
 </Web3Button>
-
-
-
-
-
-
-
-
-      </div>
+</div>
       
       <p
   style={{
@@ -379,22 +313,8 @@ const Stake: NextPage = () => {
 </p>
 
 
-
-
     </div>
            ))}
-
-
-
-
-
-
-
-
-
-
-
-
 
           </div>
         </>
@@ -404,4 +324,5 @@ const Stake: NextPage = () => {
 };
 
 export default Stake;  
+
 
