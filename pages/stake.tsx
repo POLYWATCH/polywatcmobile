@@ -169,7 +169,7 @@ const Stake: NextPage = () => {
       <hr className={`${styles.divider} ${styles.spacerTop}`} />
 
       {!address ? (
-        <ConnectWallet style={{ marginRight: "-550px" }} />
+        <ConnectWallet style={{ marginRight: "-550px" ,marginTop: "-140px" }} />
       ) : (
         <>
           <h2 className={styles.tokenLabel} style={{ fontFamily: 'VT323, monospace' }}>YOUR TIME TOKENS</h2>
