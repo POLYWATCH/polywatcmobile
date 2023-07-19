@@ -15,8 +15,10 @@ body {
   padding-bottom: 250px;
   margin: 0;
   font-family: "Inter", sans-serif;
-  background: #160a21;
-  color: var(--white);
+  background: radial-gradient(circle, #410084 20%, #2d0c36 80%);
+  background-size: 100% 100%;
+  background-repeat: no-repeat;
+  color: #fff;
 }
 
 /* Inherit fonts for inputs and buttons */
