@@ -249,7 +249,7 @@ const Stake: NextPage = () => {
 
 <hr className={`${styles.divider} ${styles.spacerTop}`} />
 <div style={{ height: "150px" }}></div>
-<div style={{ height: "300px" }}></div>
+<div style={{ height: "450px" }}></div>
 <hr className={`${styles.divider} ${styles.spacerTop}`} />
 <h2 className={styles.tokenLabel2} style={{ fontFamily: 'VT323, monospace' }}>YOUR UNSTAKED POLYWATCH</h2>
 <div style={{ height: "20px" }}></div>
