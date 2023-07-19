@@ -7,7 +7,6 @@
   box-sizing: border-box;
 }
 
-/* Set core body defaults */
 body {
   min-height: 100vh;
   text-rendering: optimizeSpeed;
@@ -15,10 +14,16 @@ body {
   padding-bottom: 250px;
   margin: 0;
   font-family: "Inter", sans-serif;
-  background: radial-gradient(circle, #410084 20%, #2d0c36 80%);
-  background-size: 100% 100%;
-  background-repeat: no-repeat;
+  background-image: linear-gradient(to bottom, #280739, #410084);
+  background-size: cover;
   color: #fff;
+}
+
+@media screen and (max-width: 768px) {
+  /* Aggiungi un fallback con un colore di sfondo solid */
+  body {
+    background-image: linear-gradient(#21013f,#530189, #410084);
+  }
 }
 
 /* Inherit fonts for inputs and buttons */
