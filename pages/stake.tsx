@@ -180,7 +180,7 @@ const Stake: NextPage = () => {
             <p className={styles.tokenValue}>
                 <b>
                   {!claimableRewards
-                    ? "No rewards"
+                    ? "Loading"
                     : ethers.utils.formatUnits(claimableRewards, 18)}
                 </b>{" "}
                 {tokenBalance && (
