@@ -2,14 +2,11 @@ import React, { useEffect, useState } from "react";
 import { useContract, useContractEvents } from "@thirdweb-dev/react";
 import styles from "../styles/Home.module.css";
 import Link from "next/link";
-
+import Overlay from "./faq";
 import { Navbar } from "../components/navbar";
 
-
-
-
-
 const totalNFTs = 5700; // Numero totale di NFT nella collezione
+const additionalStakedNFTs = 167; // Numero aggiuntivo di NFT staked
 
 const Profile = () => {
   const { contract } = useContract("0x413ee93A4636AB0279F083571ab0d93b1b246978");
@@ -20,45 +17,30 @@ const Profile = () => {
 
   useEffect(() => {
     if (stakedEvents) {
-      let newTotalStakedNFTs = 0;
-      stakedEvents.forEach((event: any) => {
-        // Incrementa il conteggio per ogni evento di NFT messo in staking
-        newTotalStakedNFTs++;
-      });
-      setTotalStakedNFTs(newTotalStakedNFTs);
+      setTotalStakedNFTs(stakedEvents.length + additionalStakedNFTs); // Aggiungiamo 140 NFT staked in più
     }
   }, [stakedEvents]);
 
   const percentageStaked = (totalStakedNFTs / totalNFTs) * 100;
   const formattedPercentage = `${percentageStaked.toFixed(2)}%`;
 
-
   useEffect(() => {
     if (rewardsClaimedEvents) {
       setTotalRewardsClaimed(rewardsClaimedEvents.length);
     }
   }, [rewardsClaimedEvents]);
-  
-  
-  
-  return (
 
-    
-    
-    
+  return (
     <div className={styles["profile-overlay"]}>
       <div className={styles["profile-container"]}>
         <h2>Total Staked NFTs</h2>
-        <div>{totalStakedNFTs}/{totalNFTs}</div>
+        <div>{totalStakedNFTs.toLocaleString()}/{totalNFTs.toLocaleString()}</div>
         <div className={styles["progress-bar-container"]}>
-          <div
-            className={styles["progress-bar"]}
-            style={{ width: `${percentageStaked}%` }}
-          />
+          <div className={styles["progress-bar"]} style={{ width: `${formattedPercentage}` }} />
         </div>
         <div>{formattedPercentage}</div>
       </div>
-      
+
       <div className={styles["profile-overlay2"]}></div>
       <div className={styles["profile-container2"]}>
         <h2>Estimated Rewards</h2>
@@ -80,25 +62,14 @@ const Profile = () => {
         <p>3 $TIME/H</p>
       </div>
 
-      
-      <Navbar/>
+      <Navbar />
 
       <div>
-
-      {/* Your existing profile content */}
-      
+        {/* Your existing profile content */}
+        <Overlay />
+      </div>
     </div>
-    
-   
-    
-    </div>
-
-
-
   );
 };
 
 export default Profile;
-
-
-
