@@ -2,7 +2,6 @@ import React, { useEffect, useState } from "react";
 import { useContract, useContractEvents } from "@thirdweb-dev/react";
 import styles from "../styles/Home.module.css";
 import Link from "next/link";
-import Overlay from "./faq";
 import { Navbar } from "../components/navbar";
 
 const totalNFTs = 5700; // Numero totale di NFT nella collezione
