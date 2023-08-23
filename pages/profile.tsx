@@ -65,7 +65,7 @@ const Profile = () => {
 
       <div>
         {/* Your existing profile content */}
-        <Overlay />
+        
       </div>
     </div>
   );
