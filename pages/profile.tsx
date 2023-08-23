@@ -6,7 +6,7 @@ import Overlay from "./faq";
 import { Navbar } from "../components/navbar";
 
 const totalNFTs = 5700; // Numero totale di NFT nella collezione
-const additionalStakedNFTs = 237; // Numero aggiuntivo di NFT staked
+const additionalStakedNFTs = 247; // Numero aggiuntivo di NFT staked
 
 const Profile = () => {
   const { contract } = useContract("0x413ee93A4636AB0279F083571ab0d93b1b246978");
